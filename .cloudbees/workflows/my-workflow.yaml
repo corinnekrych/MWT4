@@ -14,4 +14,4 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "hello wasddssdorld brdfadncasdhasd dteasdsdst2dd asd"
+          echo "hello wasddssdorld brdfadncasdhasd dteassdst2dd asd"
