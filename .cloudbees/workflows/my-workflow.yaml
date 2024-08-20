@@ -4,23 +4,12 @@ name: My workflow
 on:
   workflow_dispatch:
     inputs:
-      booparam:
+      b1:
         type: boolean
         default: false
-      numberparam:
-        type: number
-        default: 1
-        required: true
-      choice:
-        type: choice
-        options:
-          - opt1
-        default: opt1
-        required: true
-      stringparam:
-        type: string
-        default: default string
-        required: true
+      b2:
+        type: boolean
+        default: true
 jobs:
   build:
     steps:
