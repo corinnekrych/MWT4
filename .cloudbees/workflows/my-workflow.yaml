@@ -18,6 +18,7 @@ on:
         required: true
       stringparam:
         type: string
+        default: default string
         required: true
 jobs:
   build:
