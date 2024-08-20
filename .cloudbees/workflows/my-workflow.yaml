@@ -7,6 +7,7 @@ on:
       b1:
         type: boolean
         default: false
+        required: true
       b2:
         type: boolean
         default: true
