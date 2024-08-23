@@ -11,6 +11,13 @@ on:
       b2:
         type: boolean
         default: true
+      coice:
+        type: choice
+        options:
+          - opt1
+          - opt2
+        default: opt1
+        required: true
 jobs:
   build:
     steps:
