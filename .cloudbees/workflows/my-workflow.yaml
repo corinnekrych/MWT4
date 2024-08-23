@@ -17,7 +17,6 @@ on:
           - opt1
           - opt2
         default: opt1
-        required: true
 jobs:
   build:
     steps:
