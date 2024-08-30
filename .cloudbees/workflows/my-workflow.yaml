@@ -17,6 +17,8 @@ on:
           - opt1
           - opt2
         default: opt1
+      stringParam:
+        type: string
 jobs:
   build:
     steps:
