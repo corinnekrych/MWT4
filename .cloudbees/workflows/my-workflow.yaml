@@ -2,23 +2,9 @@ apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
 on:
-  workflow_dispatch:
-    inputs:
-      b1:
-        type: boolean
-        default: false
-        required: true
-      b2:
-        type: boolean
-        default: true
-      coice:
-        type: choice
-        options:
-          - opt1
-          - opt2
-        default: opt1
-      stringParam:
-        type: string
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     steps:
