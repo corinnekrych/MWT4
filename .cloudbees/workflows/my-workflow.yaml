@@ -4,12 +4,12 @@ name: My workflow
 on:
   pull_request:
     branches:
-      - main
+      - '**'
 jobs:
   build:
     steps:
       - uses: cloudbees-io/lambda-create-function@v1
-        name: Say hello
+        name: Say d8d9d1011
         with:
           timeout: ${{inputs.some}}
           publish: ${{inputs.some}}
