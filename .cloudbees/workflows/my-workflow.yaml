@@ -9,7 +9,7 @@ jobs:
   build:
     steps:
       - uses: cloudbees-io/lambda-create-function@v1
-        name: Say hello
+        name: Say hellod1
         with:
           timeout: ${{inputs.some}}
           publish: ${{inputs.some}}
