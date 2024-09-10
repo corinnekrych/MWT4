@@ -11,8 +11,8 @@ jobs:
       - uses: cloudbees-io/lambda-create-function@v1
         name: Say hello
         with:
-          timeout: ${{inputs.some}}
-          publish: ${{inputs.some}}
+          timeout: 1
+          publish: true
           s3-object-version: some
           function-name: name
           dry-run: true
