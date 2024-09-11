@@ -8,12 +8,9 @@ on:
 jobs:
   build:
     steps:
-      - uses: cloudbees-io/lambda-create-function@v1
-        name: line1\nAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylongline
+      - uses: cloudbees-io/publish-evidence-item@v1
+        name: step1
         with:
-          timeout: 1
-          publish: true
-          s3-object-version: some
-          function-name: name
-          dry-run: true
-          iam-role-arn: aws name
+          content: >-
+            1. Line 1
+            1. AverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylongline
