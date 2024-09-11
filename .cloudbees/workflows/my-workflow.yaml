@@ -2,17 +2,18 @@ apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
 on:
-  workflow_dispatch:
-    inputs:
-      strinput:
-        type: string
-      boolinput:
-        type: boolean
-        default: false
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     steps:
-      - uses: cloudbees-io/publish-evidence-item@v1
-        name: step1
+      - uses: cloudbees-io/lambda-create-function@v1
+        name: Say hello
         with:
-          content: line1\nAvewewewewewewerylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylongline
+          timeout: ${{inputs.some}}
+          publish: ${{inputs.some}}
+          s3-object-version: some
+          function-name: name
+          dry-run: true
+          iam-role-arn: aws nam
