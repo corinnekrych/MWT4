@@ -2,14 +2,17 @@ apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
 on:
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      strinput:
+        type: string
+      boolinput:
+        type: boolean
+        default: false
 jobs:
   build:
     steps:
       - uses: cloudbees-io/publish-evidence-item@v1
         name: step1
         with:
-          content: >-
-            line1\nAvewewewewewewerylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylongline
+          content: line1\nAvewewewewewewerylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylonglineAverylongline
