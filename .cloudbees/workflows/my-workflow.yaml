@@ -2,24 +2,18 @@ apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
 on:
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       number:
         type: number
   schedule:
     - cron: "*/3 * * * *"
+  push:
+    branches:
+      - main
 jobs:
-  build:
+  echo:
     steps:
-      - uses: cloudbees-io/lambda-create-function@v1
-        name: Say hello
-        with:
-          timeout: ${{inputs.some}}
-          publish: ${{inputs.some}}
-          s3-object-version: some
-          function-name: name
-          dry-run: true
-          iam-role-arn: aws nam
+      - uses: docker://corinne-container
+        name: hello
+        run: echo "boo"
