@@ -1,12 +1,15 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: My workflow
-
 on:
   push:
     branches:
-      - '**'
-
+      - "**"
+  workflow_dispatch:
+    inputs:
+      param1:
+        type: string
+        default: qwerty
 jobs:
   build:
     steps:
@@ -15,3 +18,10 @@ jobs:
         shell: sh
         run: |
           echo "hello world"
+    needs: test-approval
+  test-approval:
+    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
+    with:
+      approvers: ff9892d6-0900-11ee-94c8-42010a83ae08
+      disallowLaunchByUser: false
+      instruction: ""
