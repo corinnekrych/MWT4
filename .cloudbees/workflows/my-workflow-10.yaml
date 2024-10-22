@@ -23,5 +23,5 @@ jobs:
     delegates: cloudbees-io/manual-approval/custom-job.yml@v1
     with:
       approvers: ip-test-team,ff9892d6-0900-11ee-94c8-42010a83ae08,DOC-test-team,dbukman@cloudbees.com
-      disallowLaunchByUser: true
+      disallowLaunchByUser: false
       instruction: Please can I get this approved so I can continue. Thanks!
