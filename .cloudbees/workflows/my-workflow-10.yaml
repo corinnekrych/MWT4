@@ -24,4 +24,4 @@ jobs:
     with:
       approvers: ff9892d6-0900-11ee-94c8-42010a83ae08
       disallowLaunchByUser: false
-      instructions: Please can I get this approved so I can continue. Thanks!
+      instructions: Please can I get this approved so I can continue
