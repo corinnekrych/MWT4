@@ -24,6 +24,6 @@ jobs:
     delegates: cloudbees-io/manual-approval/custom-job.yml@v1
     with:
       approvers: ff9892d6-0900-11ee-94c8-42010a83ae08
-      disallowLaunchByUser: true
+      disallowLaunchByUser: false
       notifyAllEligibleUsers: true
       instructions: Please can I get this approved so I can continue
