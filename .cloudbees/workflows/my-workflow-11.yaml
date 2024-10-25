@@ -12,7 +12,7 @@ on:
         default: 123456
 jobs:
   build:
-    environment: requires-approval
+    environment: EnvRquiredApproval
     steps:
       - uses: docker://golang:1.20.3-alpine3.17
         name: Say hello
