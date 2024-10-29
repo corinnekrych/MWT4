@@ -34,9 +34,9 @@ jobs:
         ## instruction4
         ###instruction5
 
-        > Dorothy followed her through many of the beautiful rooms in her castle.
+        > Blockquotes can contain multiple paragraphs
         >
-        > The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+        > Add a > on the blank lines between the paragraphs.
 
         - First item
         - Second item
