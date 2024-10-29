@@ -27,10 +27,20 @@ jobs:
     with:
       approvers: ff9892d6-0900-11ee-94c8-42010a83ae08
       disallowLaunchByUser: false
-      notifyAllEligibleUsers: false
       instructions: |-
-        instruction1
-        instruction2
-        instruction3
-        instruction4
-        instruction5
+        ***instruction1***
+        `instruction2`
+        # instruction3
+        ## instruction4
+        ###instruction5
+
+        > Dorothy followed her through many of the beautiful rooms in her castle.
+        >
+        > The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+        - First item
+        - Second item
+        - Third item
+            - Indented item
+            - Indented item
+        - Fourth item
