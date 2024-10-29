@@ -29,8 +29,8 @@ jobs:
       disallowLaunchByUser: false
       notifyAllEligibleUsers: false
       instructions: |-
-        sdf
-        gsdfhbsdf
-        bsd
-        fbn
-        sdfb
+        instruction1
+        instruction2
+        instruction3
+        instruction4
+        instruction5
