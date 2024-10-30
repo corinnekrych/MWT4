@@ -28,19 +28,8 @@ jobs:
       approvers: ff9892d6-0900-11ee-94c8-42010a83ae08
       disallowLaunchByUser: false
       instructions: |-
-        ***instruction1***
-        `instruction2`
-        # instruction3
-        ## instruction4
-        ### instruction5
-
-        > Blockquotes can contain multiple paragraphs
-        >
-        > Add a > on the blank lines between the paragraphs.
-
-        - First item
-        - Second item
-        - Third item
-            - Indented item
-            - Indented item
-        - Fourth item
+        nstruction1
+        instruction2
+        instruction3
+        instruction4
+        instruction5
