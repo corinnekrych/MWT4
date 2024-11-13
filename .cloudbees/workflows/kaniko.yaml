@@ -13,10 +13,8 @@ jobs:
           registry: https://index.docker.io/v1/
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build container image with Kaniko
+      - name: Build container image with Kaniko@CBP-6772-2
         needs: dockerconfig
         uses: cloudbees-io/kaniko
         with:
-          dockerfile: ./Dockerfile
-          context: .
           destination: docker.io/corinnekrych/docker-demo:0.0.1-SNAPSHOT
