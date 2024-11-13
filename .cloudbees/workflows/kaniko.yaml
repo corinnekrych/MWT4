@@ -1,0 +1,20 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: kaniko
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    steps:
+      - id: dockerconfig
+        name: Configure container registry credentials
+        uses: cloudbees-io/configure-oci-credentials@v1
+        with:
+          registry: https://index.docker.io/v1/
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build container image with Kaniko
+        needs: dockerconfig
+        uses: cloudbees-io/kaniko@CBP-6772-2
+        with:
+          destination: docker.io/corinnekrych/docker-demo:0.0.1-SNAPSHOT
