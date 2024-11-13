@@ -1,6 +1,6 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
-name: create_artifact_info
+name: createartifactinfo
 
 on:
   workflow_dispatch:
@@ -32,7 +32,7 @@ jobs:
     - id: sleep2m
       name: Sleep 2 minutes 
       uses: docker://alpine/curl:latest
-      run: sleep 120
+      run: sleep 30
       
     - id: createArtifactInfo2
       name: Create artifact info 2
@@ -54,3 +54,4 @@ jobs:
         URL: ${{ cloudbees.api.url }}
         RUN_ID: ${{ cloudbees.run_id }}
         RUN_ATTEMPT: ${{ cloudbees.run_attempt }}
+
