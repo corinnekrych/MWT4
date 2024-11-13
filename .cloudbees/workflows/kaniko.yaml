@@ -17,6 +17,6 @@ jobs:
         needs: dockerconfig
         uses: cloudbees-io/kaniko@v1
         with:
-          dockerfile: Dockerfile
+          dockerfile: ./Dockerfile
           context: .
           destination: docker.io/corinnekrych/docker-demo:0.0.1-SNAPSHOT
