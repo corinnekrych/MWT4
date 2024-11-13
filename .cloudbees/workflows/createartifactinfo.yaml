@@ -1,0 +1,56 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: create_artifact_info
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  testCreateArtifactInfoAPI:
+    steps:
+    - id: createArtifactInfo1
+      name: Create artifact info 1
+      uses: docker://alpine/curl:latest
+      run: |
+        response=$(curl -i -X 'POST' "$URL/v2/workflows/runs/artifactinfos" -d "{\"runId\": \"$RUN_ID\", \"runAttempt\": \"$RUN_ATTEMPT\", \"name\": \"testArt\", \"url\": \"https://test.url\", \"version\": \"1.2.3\", \"type\": \"publish\"}" -H "Authorization: Bearer $JWT" -H 'Content-Type: application/json') || command_failed=1
+        
+        # Check response
+        if [ ${command_failed:-0} -eq 1 ];
+        then
+          echo "Failed with response '$response'"
+          exit 1
+        fi
+
+        echo "Success with response '$response'"
+        exit 0
+      env:
+        JWT: ${{ cloudbees.api.token }}
+        URL: ${{ cloudbees.api.url }}
+        RUN_ID: ${{ cloudbees.run_id }}
+        RUN_ATTEMPT: ${{ cloudbees.run_attempt }}
+
+    - id: sleep2m
+      name: Sleep 2 minutes 
+      uses: docker://alpine/curl:latest
+      run: sleep 120
+      
+    - id: createArtifactInfo2
+      name: Create artifact info 2
+      uses: docker://alpine/curl:latest
+      run: |
+        response=$(curl -i -X 'POST' "$URL/v2/workflows/runs/artifactinfos" -d "{\"runId\": \"$RUN_ID\", \"runAttempt\": \"$RUN_ATTEMPT\", \"name\": \"testArt\", \"url\": \"https://test.url\", \"version\": \"2.3.4\", \"type\": \"publish\"}" -H "Authorization: Bearer $JWT" -H 'Content-Type: application/json') || command_failed=1
+        
+        # Check response
+        if [ ${command_failed:-0} -eq 1 ];
+        then
+          echo "Failed with response '$response'"
+          exit 1
+        fi
+
+        echo "Success with response '$response'"
+        exit 0
+      env:
+        JWT: ${{ cloudbees.api.token }}
+        URL: ${{ cloudbees.api.url }}
+        RUN_ID: ${{ cloudbees.run_id }}
+        RUN_ATTEMPT: ${{ cloudbees.run_attempt }}
