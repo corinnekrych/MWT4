@@ -15,7 +15,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build container image with Kaniko
         needs: dockerconfig
-        uses: cloudbees-io/kaniko@v1
+        uses: cloudbees-io/kaniko
         with:
           dockerfile: ./Dockerfile
           context: .
