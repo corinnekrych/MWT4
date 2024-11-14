@@ -15,6 +15,6 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build container image with Kaniko@CBP-6772-2
         needs: dockerconfig
-        uses: cloudbees-io/kaniko
+        uses: cloudbees-io/kaniko@CBP-6772-2
         with:
           destination: docker.io/corinnekrych/docker-demo:0.0.1-SNAPSHOT
